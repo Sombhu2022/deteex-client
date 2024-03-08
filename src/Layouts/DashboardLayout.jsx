@@ -6,7 +6,7 @@ const DashboardLayout = () => {
     return (
         <section className="max-h-screen min-h-screen min-w-full max-w-full bg-purple-50 flex flex-row">
             <Sidebar />
-            <main>
+            <main className="w-full">
                 <Outlet />
             </main>
         </section>
