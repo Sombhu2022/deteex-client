@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import profilePic from "../assets/default_Profile_Pic.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 // import { FaBarsStaggered } from "react-icons/fa6";
 import { RiHomeFill, RiMailSendFill, RiUserAddFill } from "react-icons/ri";
 import { FaBuilding, FaCircleUser } from "react-icons/fa6";
 import { IoMdLogOut } from "react-icons/io";
 
 const Sidebar = () => {
-    // const location = useLocation().pathname;
-    const [activeLocation, setActiveLocation] = useState("/dashboard");
+    const location = useLocation().pathname;
+    const [activeLocation, setActiveLocation] = useState(location);
 
     return (
         <div className="w-[14rem] bg-white h-screen px-7 py-2 border border-purple-100 shadow-md flex flex-col justify-between items-center">
@@ -27,7 +27,7 @@ const Sidebar = () => {
                     <h2 className="text-xl font-medium text-purple-800">
                         John Stark
                     </h2>
-                    <p className="text-sm font-light text-slate-400">
+                    <p className="text-sm font-light text-slate-400 w-full truncate">
                         johnstark.own@gmail.com
                     </p>
                 </div>
@@ -35,12 +35,12 @@ const Sidebar = () => {
                     <ul className="flex flex-col gap-1 w-full">
                         <Link
                             className={
-                                activeLocation === "/dashboard"
+                                activeLocation === "/"
                                     ? "text-fuchsia-600 font-medium bg-purple-50 rounded-full w-full px-4 py-3"
                                     : "text-slate-400 font-normal  w-full px-4 py-3 rounded-full hover:bg-[rgb(252,248,255)] transition-all"
                             }
                             to="/"
-                            onClick={() => setActiveLocation("/dashboard")}
+                            onClick={() => setActiveLocation("/")}
                         >
                             <li className="flex gap-2 items-center">
                                 <RiHomeFill /> Dashboard
