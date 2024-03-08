@@ -6,10 +6,12 @@ import AddWorkers from "./Pages/AddWorkers";
 import AllWorkers from "./Pages/AllWorkers";
 import AllCompanies from "./Pages/AllCompanies";
 import MailLists from "./Pages/MailLists";
+import Login from "./Pages/Login";
 
 const App = () => {
     return (
         <Routes>
+            <Route path="/login" element={<Login/>}/>
             <Route element={<DashboardLayout />}>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/add-workers" element={<AddWorkers />} />
