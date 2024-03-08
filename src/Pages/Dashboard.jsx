@@ -11,7 +11,7 @@ const Dashboard = () => {
                     </h1>
                     <small>Manager</small>
                 </div>
-                <Searchbar />
+                <Searchbar /> {/* search bar component  */}
             </header>
         </section>
     );
