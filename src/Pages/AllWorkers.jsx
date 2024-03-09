@@ -99,7 +99,7 @@ function AllWorkers() {
           {data.map((ele, index) => {
             return (
                 
-              <div className="p-4 grid grid-cols-[1.5fr,repeat(4,1fr),0.5fr] odd:bg-purple-200 rounded-md">
+              <div className="p-4 grid grid-cols-[1.5fr,repeat(4,1fr),0.5fr] items-center odd:bg-purple-200 rounded-md">
 
                 <Link className="flex justify-center items-center w-[300px] ">
                   <div className="size-10 w-[15%]">
@@ -117,7 +117,17 @@ function AllWorkers() {
                 <p className="flex items-center">{ele.phone}</p>
                 <p className="flex items-center">{ele.location}</p>
                 <p className="flex items-center">{ele.company}</p>
-                <p className="flex items-center">{ele.status}</p>
+                <p  className={`flex justify-center gap-1 px-2 w-fit h-9 items-center rounded-md ${
+                                    ele.status === "Active"
+                                        ? "text-green-600 bg-green-200/[0.5] border border-green-600/[0.4]"
+                                        : ele.status === "Inactive"
+                                        ? "text-red-600 bg-red-200/[0.5]  border border-red-600/[0.4]"
+                                        : ele.status === "Reserved"
+                                        ? "text-yellow-600 bg-amber-100/[0.5] border border-yellow-600/[0.4]"
+                                        : ""
+                                }`}>
+                                     &#9679; {ele.status}
+                                    </p>
                 <div className="flex gap-3 items-center">
                   <Link>
                     <MdDelete />

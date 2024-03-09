@@ -5,7 +5,7 @@ export const data = [
         phone:7047808326,
         location:"kolkata",
         company:"google",
-        status:"Offline"
+        status:"Reserved"
     },
     {
         name:"sombhu das",
@@ -13,7 +13,7 @@ export const data = [
         phone:7047808326,
         location:"kolkata",
         company:"google",
-        status:"Offline"
+        status:"Reserved"
     },
     {
         name:"sombhu das",
@@ -21,7 +21,7 @@ export const data = [
         phone:7047808326,
         location:"kolkata",
         company:"google",
-        status:"Offline"
+        status:"Reserved"
     },
     {
         name:"sombhu das",
@@ -29,7 +29,7 @@ export const data = [
         phone:7047808326,
         location:"kolkata",
         company:"google",
-        status:"Offline"
+        status:"Reserved"
     },
     {
         name:"sombhu das",
@@ -37,7 +37,7 @@ export const data = [
         phone:7047808326,
         location:"kolkata",
         company:"google",
-        status:"Offline"
+        status:"Reserved"
     },
     {
         name:"sombhu das",
@@ -45,7 +45,7 @@ export const data = [
         phone:7047808326,
         location:"kolkata",
         company:"google",
-        status:"Offline"
+        status:"Reserved"
     },
     {
         name:"sombhu das",
@@ -53,7 +53,7 @@ export const data = [
         phone:7047808326,
         location:"kolkata",
         company:"google",
-        status:"Offline"
+        status:"Inactive"
     },
     {
         name:"sombhu das",
@@ -61,7 +61,7 @@ export const data = [
         phone:7047808326,
         location:"kolkata",
         company:"google",
-        status:"Offline"
+        status:"Active"
     },
     {
         name:"sombhu das",
@@ -69,7 +69,7 @@ export const data = [
         phone:7047808326,
         location:"kolkata",
         company:"google",
-        status:"Offline"
+        status:"Reserved"
     },
     {
         name:"sombhu das",
@@ -77,7 +77,7 @@ export const data = [
         phone:7047808326,
         location:"kolkata",
         company:"google",
-        status:"Offline"
+        status:"Reserved"
     },
     {
         name:"sombhu das",
@@ -85,6 +85,6 @@ export const data = [
         phone:7047808326,
         location:"kolkata",
         company:"google",
-        status:"Offline"
+        status:"Reserved"
     },
 ]
