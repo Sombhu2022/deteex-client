@@ -130,10 +130,10 @@ function AllWorkers() {
                                     </p>
                 <div className="flex gap-3 items-center">
                   <Link>
-                    <MdDelete />
+                    <MdDelete className="size-5 transition-all text-red-500 hover:text-red-600" />
                   </Link>
                   <Link>
-                    <MdEdit />
+                    <MdEdit className="size-5 transition-all text-green-500 hover:text-green-600" />
                   </Link>
                 </div>
               </div>
