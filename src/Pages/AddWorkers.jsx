@@ -8,7 +8,7 @@ import PersonalInformation from "../Components/AddWorkers/PersonalInformation";
 const AddWorkers = () => {
     return (
         <section id="addWorkers" className="w-full">
-            <header className="w-full flex items-center sticky top-0 left-0 bg-purple-50 h-12">
+            <header className="w-full flex items-center sticky top-0 left-0 bg-purple-50 h-12 z-50">
                 <div className="flex">
                     <h1 className="text-purple-800 font-semibold text-xl relative after:absolute after:h-[3px] after:w-[40%] after:rounded-full after:bg-purple-400 after:left-0 after:bottom-0">
                         Add Workers
