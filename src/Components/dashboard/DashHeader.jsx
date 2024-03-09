@@ -1,5 +1,7 @@
 import React from "react";
+
 import { FaCaretRight } from "react-icons/fa6";
+
 import Searchbar from "../Searchbar";
 
 const DashHeader = () => {

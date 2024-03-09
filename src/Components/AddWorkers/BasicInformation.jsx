@@ -1,11 +1,12 @@
 import React from "react";
+
 import { IoCall } from "react-icons/io5";
+import { PiBankFill } from "react-icons/pi";
+import { GiMoneyStack } from "react-icons/gi";
 import { RiHandbagFill } from "react-icons/ri";
 import { MdLocationPin } from "react-icons/md";
-import { FaAddressCard } from "react-icons/fa6";
-import { GiMoneyStack } from "react-icons/gi";
 import { FaCalendarAlt } from "react-icons/fa";
-import { PiBankFill } from "react-icons/pi";
+import { FaAddressCard } from "react-icons/fa6";
 
 const BasicInformation = () => {
     return (
