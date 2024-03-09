@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+
+import { Link, useLocation } from "react-router-dom";
+
+import { IoMdLogOut } from "react-icons/io";
+import { FaBuilding, FaCircleUser } from "react-icons/fa6";
+import { RiHomeFill, RiMailSendFill, RiUserAddFill } from "react-icons/ri";
+
 import logo from "../assets/logo.png";
 import profilePic from "../assets/default_Profile_Pic.png";
-import { Link, useLocation } from "react-router-dom";
-// import { FaBarsStaggered } from "react-icons/fa6";
-import { RiHomeFill, RiMailSendFill, RiUserAddFill } from "react-icons/ri";
-import { FaBuilding, FaCircleUser } from "react-icons/fa6";
-import { IoMdLogOut } from "react-icons/io";
 
 const Sidebar = () => {
     const location = useLocation().pathname;
