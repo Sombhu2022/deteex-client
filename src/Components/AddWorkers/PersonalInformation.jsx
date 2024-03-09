@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-import { FaCalendarAlt, FaPenFancy, FaUser } from "react-icons/fa";
-import { IoMdMailOpen } from "react-icons/io";
 import { MdPhoto } from "react-icons/md";
+import { IoMdMailOpen } from "react-icons/io";
+import { FaCalendarAlt, FaPenFancy, FaUser } from "react-icons/fa";
+
 import defaultDp from "../../assets/default_Profile_Pic.png";
 
 const PersonalInformation = () => {

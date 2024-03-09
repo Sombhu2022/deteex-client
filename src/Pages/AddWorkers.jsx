@@ -1,7 +1,9 @@
 import React from "react";
-import PersonalInformation from "../Components/AddWorkers/PersonalInformation";
-import BasicInformation from "../Components/AddWorkers/BasicInformation";
+
 import { FiArrowRight } from "react-icons/fi";
+
+import BasicInformation from "../Components/AddWorkers/BasicInformation";
+import PersonalInformation from "../Components/AddWorkers/PersonalInformation";
 
 const AddWorkers = () => {
     return (

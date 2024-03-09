@@ -1,10 +1,10 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 
 import { ImUsers } from "react-icons/im";
-import { FaRupeeSign } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaRupeeSign } from "react-icons/fa";
 
 const QuickAccess = () => {
     return (

@@ -1,8 +1,8 @@
 import React from "react";
-import { FaKey } from "react-icons/fa";
+
 import { MdDateRange } from "react-icons/md";
 import { FaBuilding } from "react-icons/fa6";
-import { FaCheckSquare } from "react-icons/fa";
+import { FaCheckSquare, FaKey } from "react-icons/fa";
 
 const RecentlyAddedWorkers = () => {
     const recentWorkers = [
