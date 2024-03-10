@@ -116,7 +116,7 @@ const AddCompany = () => {
                         </div>
                         <textarea
                             placeholder="Address"
-                            className="h-24 rounded-md border-purple-300 border p-2 outline-none focus:outline-none"
+                            className="h-24 resize-none rounded-md border-purple-300 border p-2 outline-none focus:outline-none"
                         />
                         <div className="flex items-center gap-1 font-medium">
                             <IoCall /> Phone
