@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { IoMdLogOut } from "react-icons/io";
-import { FaBuilding, FaCircleUser } from "react-icons/fa6";
+import {
+    FaBuilding,
+    FaBuildingCircleCheck,
+    FaCircleUser,
+} from "react-icons/fa6";
 import { RiHomeFill, RiMailSendFill, RiUserAddFill } from "react-icons/ri";
 
 import logo from "../assets/logo.png";
@@ -72,6 +76,19 @@ const Sidebar = () => {
                         >
                             <li className="flex gap-2 items-center">
                                 <FaCircleUser /> Workers
+                            </li>
+                        </Link>
+                        <Link
+                            className={
+                                activeLocation === "/add-company"
+                                    ? "text-fuchsia-600 font-medium bg-purple-50 rounded-full w-full px-4 py-3"
+                                    : "text-slate-400 font-normal w-full px-4 py-3 rounded-full hover:bg-[rgb(252,248,255)] transition-all"
+                            }
+                            to="/add-company"
+                            onClick={() => setActiveLocation("/add-company")}
+                        >
+                            <li className="flex gap-2 items-center">
+                                <FaBuildingCircleCheck /> Add Company
                             </li>
                         </Link>
                         <Link
