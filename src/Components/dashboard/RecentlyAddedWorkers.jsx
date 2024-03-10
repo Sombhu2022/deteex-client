@@ -89,13 +89,13 @@ const RecentlyAddedWorkers = () => {
                         <div className="text-center">{item.date}</div>
                         <div className="flex w-full items-center justify-center">
                             <div
-                                className={`flex justify-center gap-1 px-2 w-fit items-center rounded-md ${
+                                className={`flex justify-center gap-1 px-2 w-fit h-7 items-center rounded-md ${
                                     item.status === "Active"
-                                        ? "text-green-600 bg-green-200"
+                                        ? "text-green-600 bg-green-200/[0.5] border border-green-600/[0.4]"
                                         : item.status === "Inactive"
-                                        ? "text-red-600 bg-red-200"
+                                        ? "text-red-600 bg-red-200/[0.5] border border-red-600/[0.4]"
                                         : item.status === "Reserved"
-                                        ? "text-yellow-600 bg-amber-100"
+                                        ? "text-yellow-600 bg-amber-100/[0.5] border border-yellow-600/[0.4]"
                                         : ""
                                 }`}
                             >

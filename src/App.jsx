@@ -7,17 +7,24 @@ import AllWorkers from "./Pages/AllWorkers";
 import AllCompanies from "./Pages/AllCompanies";
 import MailLists from "./Pages/MailLists";
 import Login from "./Pages/Login";
+
 import Profile from "./Components/profile/Profile";
+
+import AddCompany from "./Pages/AddCompany";
+
 
 const App = () => {
     return (
         <Routes>
-            <Route path="/login" element={<Login/>}/>
+            <Route path="/login" element={<Login />} />
             <Route element={<DashboardLayout />}>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/add-workers" element={<AddWorkers />} />
                 <Route path="/workers" element={<AllWorkers />} />
+
                 <Route path="/workers/:id" element={<Profile />} />
+                <Route path="/add-company" element={<AddCompany />} />
+
                 <Route path="/companies" element={<AllCompanies />} />
                 <Route path="/mail-lists" element={<MailLists />} />
             </Route>
