@@ -1,11 +1,15 @@
 export const data = [
     {
+        id: "DX-1234",
         name:"sombhu das",
-        email:"sombhudas38@gmail.com",
+        roal:"developer",
+        prCompany:"HCL",
+        pCompany:"VIVO",
+        email:"sombhudas38@gmail.comf uv fhvhfbhbhb ufhhbv hhfhsdhry ybvbzksidwe",
         phone:7047808326,
         location:"kolkata",
         company:"google",
-        status:"Reserved"
+        status:"Active"
     },
     {
         name:"sombhu das",

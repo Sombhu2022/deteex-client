@@ -32,7 +32,7 @@ function AllWorkers() {
       </div>
 
       {/* catagory wise total workers */}
-      <div className=" flex gap-5 justify-between items-center w-full ">
+      <div className=" flex gap-5 px-2 justify-between items-center w-full ">
         <WorkerQuickAccess
           icon={icon1}
           heading={"All Workers"}
@@ -66,12 +66,12 @@ function AllWorkers() {
       <div className="mt-8 border  bg-purple-100 p-2 rounded-lg">
         <div className="flex justify-between items-center border-b-2 border-b-purple-200 p-3">
           <p className="font-semibold">{heading}</p>
-          <p>1-10 of 200 </p>
+          <p> <b className="text-purple-600">1-10</b> of 200 </p>
         </div>
 
         {/* workers container */}
         <div className=" mt-3">
-          <div className="p-4 px-8 grid grid-cols-[1.5fr,repeat(4,1fr),0.5fr] border-b bg-purple-200 rounded-md">
+          <div className="p-4 px-8 grid grid-cols-[1.5fr,repeat(4,1fr),0.5fr] border bg-purple-200 rounded-md">
             <p className="flex gap-1 items-center text-purple-800 text-lg font-medium">
               <FaUser />
               Name
@@ -143,7 +143,7 @@ function AllWorkers() {
       </div>
 
       <div className="flex justify-between items-center my-6 pb-8">
-        <p>1-10 of 220</p>
+        <p> <b>1-10</b> of 220</p>
 
         {/* buttons */}
         <p className="flex items-center gap-6 text-gray-800">
