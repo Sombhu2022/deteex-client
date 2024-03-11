@@ -5,11 +5,12 @@ export const data = [
         roal:"developer",
         prCompany:"HCL",
         pCompany:"VIVO",
-        email:"sombhudas38@gmail.comf uv fhvhfbhbhb ufhhbv hhfhsdhry ybvbzksidwe",
+        email:"sombhudas38@gmail.comf uv fhvhfbhbhb ufhhbv hhfhsdhry ybvbzksidwe sdkfbhdb uhvrugf bu r vbdvfeyvb rvbvfbvvbrfb dvre bvrb vyb dabsyd vgvyrg",
         phone:7047808326,
         location:"kolkata",
         company:"google",
-        status:"Active"
+        status:"Active",
+        
     },
     {
         name:"sombhu das",
