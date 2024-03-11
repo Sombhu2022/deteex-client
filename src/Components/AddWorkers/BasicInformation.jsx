@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { IoCall } from "react-icons/io5";
 import { PiBankFill } from "react-icons/pi";
@@ -9,14 +9,31 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { FaAddressCard } from "react-icons/fa6";
 
 const BasicInformation = () => {
+    const [adharNumber, setAdharNumber] = useState("");
+    const [contactNumber, setContactNumber] = useState("");
+
+    const handleChangeAadhar = (e) => {
+        const input = e.target.value;
+        if (input.length <= 12 && !isNaN(input)) {
+            setAdharNumber(input);
+        }
+    };
+
+    const handleChangeContact = (e) => {
+        const input = e.target.value;
+        if (input.length <= 10 && !isNaN(input)) {
+            setContactNumber(input);
+        }
+    };
+
     return (
         <>
             <div className="titleSection mt-4">
                 <h1 className="text-purple-800 font-semibold text-xl m-0">
-                    Personal Information
+                    Basic Information
                 </h1>
                 <p className="text-sm text-slate-500">
-                    Fillup the personal informations of the Workers
+                    Fillup the basic informations of the Workers
                 </p>
             </div>
             <div className="container w-[610px] border border-purple-200 px-4 py-3 rounded-md bg-fuchsia-100 mt-1">
@@ -26,7 +43,8 @@ const BasicInformation = () => {
                     </div>
                     <input
                         type="number"
-                        maxLength={10}
+                        value={contactNumber}
+                        onChange={handleChangeContact}
                         placeholder="Contact Number"
                         className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none"
                     />
@@ -53,7 +71,8 @@ const BasicInformation = () => {
                     </div>
                     <input
                         type="number"
-                        maxLength={12}
+                        value={adharNumber}
+                        onChange={handleChangeAadhar}
                         placeholder="Addhar number"
                         className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none"
                     />

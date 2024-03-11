@@ -5,6 +5,7 @@ import { IoMdMailOpen } from "react-icons/io";
 import { FaCalendarAlt, FaPenFancy, FaUser } from "react-icons/fa";
 
 import defaultDp from "../../assets/default_Profile_Pic.png";
+import { HiLocationMarker } from "react-icons/hi";
 
 const PersonalInformation = () => {
     const [file, setFile] = useState(defaultDp);
@@ -39,6 +40,7 @@ const PersonalInformation = () => {
                         <FaUser /> Full Name{" "}
                     </div>
                     <input
+                        required
                         type="text"
                         placeholder="Full name"
                         className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none"
@@ -48,14 +50,16 @@ const PersonalInformation = () => {
                         <IoMdMailOpen /> Email Address{" "}
                     </div>
                     <input
+                        required
                         type="email"
                         placeholder="Email Id"
-                        className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none"
+                        className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none lowercase"
                     />
                     <div className="flex items-center gap-1 font-medium">
                         <FaCalendarAlt /> Date of Birth
                     </div>
                     <input
+                        required
                         type="date"
                         placeholder="DD-MM-YYYY"
                         className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none"
@@ -73,6 +77,7 @@ const PersonalInformation = () => {
                             className="h-24 w-24 aspect-square rounded-full"
                         />
                         <input
+                            required
                             id="imageUpload"
                             type="file"
                             accept="image/*"
@@ -98,8 +103,18 @@ const PersonalInformation = () => {
                         <FaPenFancy /> Address
                     </div>
                     <textarea
+                        required
                         placeholder="Address"
-                        className="h-24 rounded-md border-purple-300 border p-2 outline-none focus:outline-none"
+                        className="h-24 resize-none rounded-md border-purple-300 border p-2 outline-none focus:outline-none"
+                    />
+                    <div className="flex items-center gap-1 font-medium">
+                        <HiLocationMarker /> Location
+                    </div>
+                    <input
+                        required
+                        type="text"
+                        placeholder="Location"
+                        className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none"
                     />
                 </div>
             </div>
