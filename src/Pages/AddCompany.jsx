@@ -17,6 +17,31 @@ const AddCompany = () => {
     const [file, setFile] = useState(defaultDp);
     const [contactNumber, setContactNumber] = useState("");
 
+    const [textFields, setTextFields] = useState([
+        { id: 1, jobRole: "", capacity: "" },
+    ]);
+    const [nextId, setNextId] = useState(2);
+
+    console.log(textFields);
+
+    const handleAddTextField = (e) => {
+        e.preventDefault();
+        setTextFields([
+            ...textFields,
+            { id: nextId, jobRole: "", capacity: "" },
+        ]);
+        setNextId(nextId + 1);
+    };
+
+    const handleChange = (id, e) => {
+        const updatedTextFields = textFields.map((textField) =>
+            textField.id === id
+                ? { ...textField, [e.target.name]: e.target.value }
+                : textField
+        );
+        setTextFields(updatedTextFields);
+    };
+
     const handleContactChange = (e) => {
         const inputContact = e.target.value;
         if (inputContact.length <= 10 && !isNaN(inputContact)) {
@@ -40,7 +65,7 @@ const AddCompany = () => {
 
     return (
         <section id="addWorkers" className="w-full">
-            <header className="w-full flex items-center sticky top-0 left-0 bg-purple-50 h-12 z-50">
+            <header className="w-full flex items-center sticky top-0 left-0 bg-purple-50 h-14 z-50">
                 <div className="flex">
                     <h1 className="text-purple-800 font-semibold text-xl relative after:absolute after:h-[3px] after:w-[40%] after:rounded-full after:bg-purple-400 after:left-0 after:bottom-0">
                         Add Company
@@ -138,7 +163,7 @@ const AddCompany = () => {
                             className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none"
                         />
 
-                        <div className="flex items-center gap-1 font-medium self-start pt-2">
+                        {/* <div className="flex items-center gap-1 font-medium self-start pt-2">
                             <PiBankFill /> Bank Details
                         </div>
                         <div className="flex w-full flex-col gap-2">
@@ -186,6 +211,53 @@ const AddCompany = () => {
                                 placeholder="Bank Name"
                                 className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none"
                             />
+                        </div> */}
+
+                        <div className="flex items-center gap-1 font-medium self-start pt-2">
+                            <PiBankFill /> Required Posts
+                        </div>
+                        <div>
+                            {textFields.map((textField) => (
+                                <div
+                                    className="flex flex-row gap-1"
+                                    key={textField.id}
+                                >
+                                    <input
+                                        type="text"
+                                        value={textField.jobRole}
+                                        name="jobRole"
+                                        onChange={(e) =>
+                                            handleChange(textField.id, e)
+                                        }
+                                        required
+                                        placeholder="Enter job role"
+                                        className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none mb-2 w-[70%]"
+                                    />
+                                    <input
+                                        type="number"
+                                        value={textField.capacity}
+                                        name="capacity"
+                                        onChange={(e) =>
+                                            handleChange(textField.id, e)
+                                        }
+                                        required
+                                        placeholder="Capacity"
+                                        className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none mb-2 w-[30%]"
+                                    />
+                                </div>
+                            ))}
+                            <button
+                                onClick={handleAddTextField}
+                                disabled={textFields.some(
+                                    (field) =>
+                                        field.post === "" ||
+                                        field.capacity === ""
+                                )}
+                                // className="py-1 px-3 border border-purple-100 disabled:bg-slate-200 disabled:border-slate-400 bg-purple-400 text-white disabled:text-slate-400 rounded-md"
+                                className="disabled:text-slate-400 text-purple-800"
+                            >
+                                Add Role
+                            </button>
                         </div>
                     </div>
                 </div>
