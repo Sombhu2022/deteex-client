@@ -58,7 +58,7 @@ const RecentlyAddedWorkers = () => {
     return (
         <div className="bg-purple-100 px-5 py-3 w-[60%] rounded-md shadow-md">
             <h1 className="text-xl font-semibold text-purple-950 mb-4">
-                Recently Added Workers
+                Recently Hired Workers
             </h1>
 
             <div className="w-full grid grid-cols-4 bg-purple-300 px-3 py-2 rounded-sm items-center justify-center">
