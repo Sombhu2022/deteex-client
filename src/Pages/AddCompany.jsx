@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import { IoCall } from "react-icons/io5";
 import { MdPhoto } from "react-icons/md";
 import { PiBankFill } from "react-icons/pi";
-import { GiMoneyStack } from "react-icons/gi";
+// import { GiMoneyStack } from "react-icons/gi";
 import { FiArrowRight } from "react-icons/fi";
 import { IoMdMailOpen } from "react-icons/io";
 import { RiHandbagFill } from "react-icons/ri";
-import { MdLocationPin } from "react-icons/md";
+// import { MdLocationPin } from "react-icons/md";
 import { FaAddressCard, FaBuilding } from "react-icons/fa6";
 import { FaCalendarAlt, FaPenFancy, FaUser } from "react-icons/fa";
 
@@ -22,7 +22,7 @@ const AddCompany = () => {
     ]);
     const [nextId, setNextId] = useState(2);
 
-    console.log(textFields);
+    // console.log(textFields);
 
     const handleAddTextField = (e) => {
         e.preventDefault();
@@ -229,7 +229,6 @@ const AddCompany = () => {
                                         onChange={(e) =>
                                             handleChange(textField.id, e)
                                         }
-                                        required
                                         placeholder="Enter job role"
                                         className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none mb-2 w-[70%]"
                                     />
@@ -240,7 +239,6 @@ const AddCompany = () => {
                                         onChange={(e) =>
                                             handleChange(textField.id, e)
                                         }
-                                        required
                                         placeholder="Capacity"
                                         className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none mb-2 w-[30%]"
                                     />

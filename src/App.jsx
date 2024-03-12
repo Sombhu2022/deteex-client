@@ -11,7 +11,7 @@ import Login from "./Pages/Login";
 import Profile from "./Components/profile/Profile";
 
 import AddCompany from "./Pages/AddCompany";
-
+import TeamMembers from "./Pages/TeamMembers";
 
 const App = () => {
     return (
@@ -27,6 +27,7 @@ const App = () => {
 
                 <Route path="/companies" element={<AllCompanies />} />
                 <Route path="/mail-lists" element={<MailLists />} />
+                <Route path="/team-members" element={<TeamMembers />} />
             </Route>
         </Routes>
     );
