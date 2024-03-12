@@ -66,7 +66,10 @@ function AllWorkers() {
       <div className="mt-8 border  bg-purple-100 p-2 rounded-lg">
         <div className="flex justify-between items-center border-b-2 border-b-purple-200 p-3">
           <p className="font-semibold">{heading}</p>
-          <p> <b className="text-purple-600">1-10</b> of 200 </p>
+          <p>
+            {" "}
+            <b className="text-purple-600">1-10</b> of 200{" "}
+          </p>
         </div>
 
         {/* workers container */}
@@ -98,9 +101,7 @@ function AllWorkers() {
           </div>
           {data.map((ele, index) => {
             return (
-                
               <div className="p-4 grid grid-cols-[1.5fr,repeat(4,1fr),0.5fr] items-center odd:bg-purple-200 rounded-md">
-
                 <Link className="flex justify-center items-center w-[300px] ">
                   <div className="size-10 w-[15%]">
                     <img
@@ -111,23 +112,36 @@ function AllWorkers() {
                   </div>
                   <div className="w-[85%] pr-5">
                     <p className="truncate capitalize">{ele.name}</p>
-                    <p className=" truncate text-slate-400 font-light">{ele.email}</p>
+                    <p className=" truncate text-slate-400 font-light">
+                      {ele.email}
+                    </p>
                   </div>
                 </Link>
                 <p className="flex items-center">{ele.phone}</p>
                 <p className="flex items-center">{ele.location}</p>
-                <p className="flex items-center">{ele.company}</p>
-                <p  className={`flex justify-center gap-1 px-2 w-fit h-9 items-center rounded-md ${
-                                    ele.status === "Active"
-                                        ? "text-green-600 bg-green-200/[0.5] border border-green-600/[0.4]"
-                                        : ele.status === "Inactive"
-                                        ? "text-red-600 bg-red-200/[0.5]  border border-red-600/[0.4]"
-                                        : ele.status === "Reserved"
-                                        ? "text-yellow-600 bg-amber-100/[0.5] border border-yellow-600/[0.4]"
-                                        : ""
-                                }`}>
-                                     &#9679; {ele.status}
-                                    </p>
+                <p className="flex items-center  gap-1 capitalize">
+                    <img
+                      className="h-full aspect-square rounded-full object-contain size-10 w-[13%] "
+                      src={dp}
+                      alt=""
+                    />
+                
+
+                  {ele.company}
+                </p>
+                <p
+                  className={`flex justify-center gap-1 px-2 w-fit h-9 items-center rounded-md ${
+                    ele.status === "Active"
+                      ? "text-green-600 bg-green-200/[0.5] border border-green-600/[0.4]"
+                      : ele.status === "Inactive"
+                      ? "text-red-600 bg-red-200/[0.5]  border border-red-600/[0.4]"
+                      : ele.status === "Reserved"
+                      ? "text-yellow-600 bg-amber-100/[0.5] border border-yellow-600/[0.4]"
+                      : ""
+                  }`}
+                >
+                  &#9679; {ele.status}
+                </p>
                 <div className="flex gap-3 items-center">
                   <Link>
                     <MdDelete className="size-5 transition-all text-red-500 hover:text-red-600" />
@@ -143,7 +157,10 @@ function AllWorkers() {
       </div>
 
       <div className="flex justify-between items-center my-6 pb-8">
-        <p> <b>1-10</b> of 220</p>
+        <p>
+          {" "}
+          <b>1-10</b> of 220
+        </p>
 
         {/* buttons */}
         <p className="flex items-center gap-6 text-gray-800">

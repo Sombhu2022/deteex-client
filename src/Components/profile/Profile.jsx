@@ -12,14 +12,14 @@ import { MdEdit } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 
 
-function Profile({id , item}) {
+function Profile({item}) {
   // const item = data[id];
   return (
-    <div className=" h-full w-full p-3">
+    <div className=" h-full w-full p-3 pb-0 ">
 
 
       {/* profile page */}
-      <div className="grid grid-cols-[2fr,3fr] w-[45rem] bg-purple-100 mt-[120px] gap-3 mb-44 py-4 border rounded-md">
+      <div className="grid grid-cols-[2fr,3fr] w-[45rem] bg-purple-100 mt-[120px] gap-3 mb-5 py-4 border rounded-md">
         <div className="left  flex flex-col gap-11 px-3">
           <div className="top relative flex flex-col gap-3 px-2">
             <div className="info flex flex-col items-center justify-center px-5 absolute bottom-[220px]">
@@ -29,12 +29,12 @@ function Profile({id , item}) {
                 className="w-52 h-52 aspect-square rounded-full border-4"
               />
               <p>ID:- {item.id}</p>
-              <p className="w-full line-clamp-2 text-slate-500">{item.email}</p>
+              <p className="w-full line-clamp-1 text-slate-500">{item.email}</p>
               <p className="flex items-center justify-center gap-1 w-full line-clamp-1"><FaLocationDot/>  {item.name}</p>
             </div>
             <div className="pt-[200px]">
               <h2 className="border-b-2 border-purple-300 font-medium"> Job Details: </h2>
-              <p className="font-medium">Job roal:  <span className="font-light text-purple-900">{item.roal}</span></p>
+              <p className="font-medium">Job role:  <span className="font-light text-purple-900">{item.roal}</span></p>
               <p className="font-medium">Present Company: <span className="font-light text-purple-900">{item.pCompany}</span></p>
               <p className="font-medium">Privious Company: <span className="font-light text-purple-900">{item.prComnany}</span></p>
             </div>

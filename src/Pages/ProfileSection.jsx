@@ -29,7 +29,7 @@ function ProfileSection() {
           <p className="text-slate-400">{item.status}</p>
         </p>
       </div>
-    <div className='flex '>
+    <div className='ml-10 '>
         <Profile  item={item}/>
         <WorkerMails item={item}/>
     </div>
