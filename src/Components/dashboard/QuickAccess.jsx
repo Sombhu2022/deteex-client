@@ -8,7 +8,7 @@ import { FaExternalLinkAlt, FaRupeeSign } from "react-icons/fa";
 
 const QuickAccess = () => {
     return (
-        <div className="quickAccessBar grid grid-cols-4 gap-8">
+        <div className="quickAccessBar grid grid-cols-4 gap-8 px-2">
             {/* containers  */}
             <div className="bg-purple-100 h-24  rounded-md px-4 py-3 border border-fuchsia-100 shadow-md w-full flex flex-col justify-around">
                 <div className="flex w-full items-center justify-between text-sm text-slate-600">

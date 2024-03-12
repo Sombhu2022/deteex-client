@@ -9,49 +9,49 @@ const RecentlyAddedWorkers = () => {
         {
             workerId: "dtx-2500",
             date: "12-02-2023",
-            status: "Active",
+            post: "manager",
             company: "TCS",
         },
         {
             workerId: "dtx-2501",
             date: "12-02-2023",
-            status: "Inactive",
+            post: "manager",
             company: "TCS",
         },
         {
             workerId: "dtx-2502",
             date: "12-02-2023",
-            status: "Inactive",
+            post: "manager",
             company: "TCS",
         },
         {
             workerId: "dtx-2503",
             date: "12-02-2023",
-            status: "Active",
+            post: "manager",
             company: "TCS",
         },
         {
             workerId: "dtx-2504",
             date: "12-02-2023",
-            status: "Reserved",
+            post: "manager",
             company: "TCS",
         },
         {
             workerId: "dtx-2505",
             date: "12-02-2023",
-            status: "Reserved",
+            post: "manager",
             company: "TCS",
         },
         {
             workerId: "dtx-2506",
             date: "12-02-2023",
-            status: "Active",
+            post: "manager",
             company: "TCS",
         },
         {
             workerId: "dtx-2507",
             date: "12-02-2023",
-            status: "Reserved",
+            post: "manager",
             company: "TCS",
         },
     ];
@@ -72,7 +72,7 @@ const RecentlyAddedWorkers = () => {
                 </div>
                 <div className="flex gap-1 items-center justify-center text-purple-950 text-base font-medium">
                     <FaCheckSquare />
-                    <p>Status</p>
+                    <p>Post</p>
                 </div>
                 <div className="flex gap-1 items-center justify-center text-purple-950 text-base font-medium">
                     <FaBuilding />
@@ -88,19 +88,7 @@ const RecentlyAddedWorkers = () => {
                         <div className="text-center">{item.workerId}</div>
                         <div className="text-center">{item.date}</div>
                         <div className="flex w-full items-center justify-center">
-                            <div
-                                className={`flex justify-center gap-1 px-2 w-fit h-7 items-center rounded-md ${
-                                    item.status === "Active"
-                                        ? "text-green-600 bg-green-200/[0.5] border border-green-600/[0.4]"
-                                        : item.status === "Inactive"
-                                        ? "text-red-600 bg-red-200/[0.5] border border-red-600/[0.4]"
-                                        : item.status === "Reserved"
-                                        ? "text-yellow-600 bg-amber-100/[0.5] border border-yellow-600/[0.4]"
-                                        : ""
-                                }`}
-                            >
-                                &#9679; {item.status}
-                            </div>
+                            <div className="text-center"> {item.post}</div>
                         </div>
                         <div className="text-center">{item.company}</div>
                     </div>
