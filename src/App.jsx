@@ -8,7 +8,7 @@ import AllCompanies from "./Pages/AllCompanies";
 import MailLists from "./Pages/MailLists";
 import Login from "./Pages/Login";
 
-import Profile from "./Components/profile/Profile";
+import ProfileSection from "./Pages/ProfileSection";
 
 import AddCompany from "./Pages/AddCompany";
 import TeamMembers from "./Pages/TeamMembers";
