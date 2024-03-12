@@ -254,7 +254,7 @@ const AddCompany = () => {
                                         field.capacity === ""
                                 )}
                                 // className="py-1 px-3 border border-purple-100 disabled:bg-slate-200 disabled:border-slate-400 bg-purple-400 text-white disabled:text-slate-400 rounded-md"
-                                className="disabled:text-slate-400 text-purple-800"
+                                className="disabled:text-slate-400 disabled:cursor-not-allowed cursor-pointer text-purple-800 border border-purple-400 rounded-md px-2 py-1 disabled:border-slate-400"
                             >
                                 Add Role
                             </button>

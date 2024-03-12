@@ -6,7 +6,7 @@ import Searchbar from "../Searchbar";
 
 const DashHeader = () => {
     return (
-        <header className="flex items-center justify-between flex-row sticky h-14">
+        <header className="flex items-center justify-between flex-row sticky top-0 h-14 bg-purple-50 z-50">
             <div className="userDetails flex items-start flex-col">
                 <h1 className="text-purple-800 font-semibold text-xl">
                     Welcome back, John...
