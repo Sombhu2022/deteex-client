@@ -54,19 +54,6 @@ const Sidebar = () => {
                         </Link>
                         <Link
                             className={
-                                activeLocation === "/team-members"
-                                    ? "text-fuchsia-600 font-medium bg-purple-50 rounded-full w-full px-4 py-3"
-                                    : "text-slate-400 font-normal  w-full px-4 py-3 rounded-full hover:bg-[rgb(252,248,255)] transition-all"
-                            }
-                            to="/team-members"
-                            onClick={() => setActiveLocation("/team-members")}
-                        >
-                            <li className="flex gap-2 items-center">
-                                <RiHomeFill /> Team Members
-                            </li>
-                        </Link>
-                        <Link
-                            className={
                                 activeLocation === "/add-workers"
                                     ? "text-fuchsia-600 font-medium bg-purple-50 rounded-full w-full px-4 py-3"
                                     : "text-slate-400 font-normal w-full px-4 py-3 rounded-full hover:bg-[rgb(252,248,255)] transition-all"

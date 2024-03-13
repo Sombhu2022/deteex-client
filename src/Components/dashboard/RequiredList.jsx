@@ -68,8 +68,8 @@ const RequiredList = () => {
                                     </div>
                                 </Link>
                                 <div className="flex flex-col px-4 ">
-                                    <div className="grid grid-cols-2 bg-purple-300 rounded-md">
-                                        <p className="text-center">
+                                    <div className="grid grid-cols-2 border border-purple-500 rounded-md">
+                                        <p className="text-center border-r border-purple-500">
                                             Designation
                                         </p>
                                         <p className="text-center">Capacity </p>
@@ -77,7 +77,7 @@ const RequiredList = () => {
                                     {item.designation.map((elm, ind) => {
                                         return (
                                             <div
-                                                className="grid grid-cols-2 "
+                                                className="grid grid-cols-2 border-b"
                                                 key={ind}
                                             >
                                                 <p className="text-center">
