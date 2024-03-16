@@ -13,6 +13,10 @@ import { requirement } from "../../json/requirement";
 import dp from "../../assets/default_Profile_Pic.png";
 
 const RequiredList = () => {
+
+
+
+
     return (
         <section id="requiredList">
             <header className="w-full flex items-center justify-between left-0 bg-purple-50 h-14 z-50">

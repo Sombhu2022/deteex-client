@@ -12,10 +12,18 @@ import { RiHomeFill, RiMailSendFill, RiUserAddFill } from "react-icons/ri";
 
 import logo from "../assets/logo.png";
 import profilePic from "../assets/default_Profile_Pic.png";
+import { logoutUser, selectUser } from "../redux/slices/authSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Sidebar = () => {
     const location = useLocation().pathname;
     const [activeLocation, setActiveLocation] = useState(location);
+    const { isAuthenticated } = useSelector(selectUser);
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(logoutUser());
+    };
 
     return (
         <div className="w-[14rem] bg-white h-screen px-7 py-2 border border-purple-100 shadow-md flex flex-col justify-between items-center">
@@ -123,7 +131,7 @@ const Sidebar = () => {
             </div>
             <div className="w-full pb-10 border-t-2">
                 <Link
-                    to={"/login"}
+                    onClick={handleLogout}
                     className="flex flex-row items-center justify-center w-full bg-gradient-to-tl from-indigo-600 hover:bg-indigo-700 to-fuchsia-600 hover:to-fuchsia-700 py-2 px-4 rounded-md text-white gap-2 font-medium transition-all"
                 >
                     <IoMdLogOut className="text-xl" /> Logout
