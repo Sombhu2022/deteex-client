@@ -122,7 +122,10 @@ const Sidebar = () => {
                 <hr className="border border-slate-200" />
             </div>
             <div className="w-full pb-10 border-t-2">
-                <Link to={'/login'} className="flex flex-row items-center justify-center w-full bg-gradient-to-tl from-indigo-600 hover:bg-indigo-700 to-fuchsia-600 hover:to-fuchsia-700 py-2 px-4 rounded-md text-white gap-2 font-medium transition-all">
+                <Link
+                    to={"/login"}
+                    className="flex flex-row items-center justify-center w-full bg-gradient-to-tl from-indigo-600 hover:bg-indigo-700 to-fuchsia-600 hover:to-fuchsia-700 py-2 px-4 rounded-md text-white gap-2 font-medium transition-all"
+                >
                     <IoMdLogOut className="text-xl" /> Logout
                 </Link>
             </div>
