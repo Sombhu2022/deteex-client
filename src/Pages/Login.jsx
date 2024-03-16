@@ -1,36 +1,40 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import img from "../assets/background1.jpeg";
 import { FcGoogle } from "react-icons/fc";
 import { GoogleLogin, useGoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
+import { googleSignUp, selectUser } from "../redux/slices/authSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function Login() {
-
-  const [name, setName] = useState("");
+	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [avatar, setAvatar] = useState("");
-	// const dispatch = useDispatch();
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+	const {isAuthenticated} = useSelector(selectUser)
 
 	const logIn = () => {
 		if (name && email && avatar) {
-      console.log(name, email, avatar);
-			// dispatch(googleSignUp({ name, email, avatar }));
+			console.log(name, email, avatar);
+			dispatch(googleSignUp({ name, email, avatar }));
 		}
 	};
 
 	const handleSuccess = (credentialResponse) => {
 		let decoded = jwtDecode(credentialResponse.credential);
+		console.log(decoded);
 		setAvatar(decoded.picture);
 		setEmail(decoded.email);
 		setName(`${decoded.given_name} ${decoded.family_name}`);
 	};
 	useEffect(() => {
+		if (isAuthenticated) {
+            navigate(`/`)
+        }
 		logIn();
-	}, [avatar]);
-
-
-
+	}, [avatar, isAuthenticated]);
 
 	return (
 		<div
