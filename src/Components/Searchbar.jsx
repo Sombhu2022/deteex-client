@@ -10,7 +10,7 @@ const Searchbar = () => {
                     type="text"
                     name=""
                     id=""
-                    placeholder="Search..."
+                    placeholder=" Search by clientId..."
                     className="bg-transparent outline-none text-purple-800 pr-5 w-[25rem]"
                 />
             </div>
