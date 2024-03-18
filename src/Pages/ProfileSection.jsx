@@ -11,8 +11,8 @@ function ProfileSection() {
   return (
     <>
     <div>
-        <h1 className="font-semibold mt-2">{item.name}</h1>
-        <p className="flex gap-1 ">
+        <h1 className="font-semibold mt-2">{item?.name}</h1>
+        <div className="flex gap-1 ">
           <p
             className={`  ${
               item.status === "Active"
@@ -27,7 +27,7 @@ function ProfileSection() {
             &#9679;
           </p>
           <p className="text-slate-400">{item.status}</p>
-        </p>
+        </div>
       </div>
     <div className='ml-10 '>
         <Profile  item={item}/>
