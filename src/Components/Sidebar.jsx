@@ -119,11 +119,24 @@ const Sidebar = () => {
                                     ? "text-fuchsia-600 font-medium bg-purple-50 rounded-full w-full px-4 py-3"
                                     : "text-slate-400 font-normal w-full px-4 py-3 rounded-full hover:bg-[rgb(252,248,255)] transition-all"
                             }
-                            to="mail-lists"
+                            to="/mail-lists"
                             onClick={() => setActiveLocation("/mail-lists")}
                         >
                             <li className="flex gap-2 items-center">
                                 <RiMailSendFill /> Mails
+                            </li>
+                        </Link>
+                        <Link
+                            className={
+                                activeLocation === "/payment-list"
+                                    ? "text-fuchsia-600 font-medium bg-purple-50 rounded-full w-full px-4 py-3"
+                                    : "text-slate-400 font-normal w-full px-4 py-3 rounded-full hover:bg-[rgb(252,248,255)] transition-all"
+                            }
+                            to="/payment-list"
+                            onClick={() => setActiveLocation("/payment-list")}
+                        >
+                            <li className="flex gap-2 items-center">
+                                <RiMailSendFill /> Payments
                             </li>
                         </Link>
                     </ul>
