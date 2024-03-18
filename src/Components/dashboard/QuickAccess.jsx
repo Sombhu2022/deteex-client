@@ -32,7 +32,7 @@ const QuickAccess = () => {
                         <ImUsers />
                         Total Workers
                     </div>
-                    <Link to="/">
+                    <Link to="/workers">
                         <FaExternalLinkAlt />
                     </Link>
                 </div>

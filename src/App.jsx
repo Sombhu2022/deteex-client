@@ -14,6 +14,7 @@ import AddCompany from "./Pages/AddCompany";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser, selectUser } from "./redux/slices/authSlice";
 import PaymentList from "./Pages/PaymentList";
+import TeamMembers from "./Pages/TeamMembers";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -39,6 +40,7 @@ const App = () => {
                 <Route path="/companies" element={<AllCompanies />} />
                 <Route path="/mail-lists" element={<MailLists />} />
                 <Route path="/payment-list" element={<PaymentList />} />
+                <Route path="/team-members" element={<TeamMembers />} />
             </Route>
         </Routes>
     );
