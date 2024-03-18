@@ -101,7 +101,7 @@ function AllWorkers() {
           </div>
           {data.map((ele, index) => {
             return (
-              <div className="p-4 grid grid-cols-[1.5fr,repeat(4,1fr),0.5fr] items-center odd:bg-purple-200 rounded-md">
+              <div key={index} className="p-4 grid grid-cols-[1.5fr,repeat(4,1fr),0.5fr] items-center odd:bg-purple-200 rounded-md">
                 <Link className="flex justify-center items-center w-[300px] ">
                   <div className="size-10 w-[15%]">
                     <img

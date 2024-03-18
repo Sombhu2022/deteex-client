@@ -18,8 +18,9 @@ import { useDispatch, useSelector } from "react-redux";
 const Sidebar = () => {
 	const location = useLocation().pathname;
 	const [activeLocation, setActiveLocation] = useState(location);
-	const { isAuthenticated } = useSelector(selectUser);
+	const { isAuthenticated , user} = useSelector(selectUser);
 	const dispatch = useDispatch();
+	console.log(user);
 
 	const handleLogout = () => {
 		dispatch(logoutUser());
@@ -34,13 +35,13 @@ const Sidebar = () => {
 				</div>
 				<div className='w-full flex flex-col items-center justify-center'>
 					<img
-						src={profilePic}
-						alt='name'
+						src={user?.avatar}
+						alt={user?.name}
 						className='w-24 aspect-square rounded-full select-none mb-1'
 					/>
-					<h2 className='text-xl font-medium text-purple-800'>John Stark</h2>
+					<h2 className='text-xl font-medium text-purple-800'>{user?.name}</h2>
 					<p className='text-sm font-light text-slate-400 w-full truncate'>
-						johnstark.own@gmail.com
+					{user?.email}
 					</p>
 				</div>
 				<div className='url_container w-full'>
