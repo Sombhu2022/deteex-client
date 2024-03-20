@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { IoCall } from "react-icons/io5";
 import { MdPhoto } from "react-icons/md";
@@ -12,25 +12,38 @@ import { FaAddressCard, FaBuilding } from "react-icons/fa6";
 import { FaCalendarAlt, FaPenFancy, FaUser } from "react-icons/fa";
 
 import defaultDp from "../assets/default_Profile_Pic.png";
-import { useDispatch } from "react-redux";
-import { addCompany } from "../redux/slices/companySlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+	addCompany,
+	clearError,
+	selectCompany,
+} from "../redux/slices/companySlice";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const AddCompany = () => {
-
-    const dispatch = useDispatch();
+	const dispatch = useDispatch();
+	const { cmpStatus } = useSelector(selectCompany);
+	const navigate = useNavigate();
 
 	const [file, setFile] = useState(defaultDp);
 	const [reqRoles, setReqRoles] = useState([
 		{ id: 1, jobRole: "", capacity: "" },
 	]);
 	const [nextId, setNextId] = useState(2);
-    const [cmpName, setCmpName] = useState("");
+	const [cmpName, setCmpName] = useState("");
 	const [cmpEmail, setCmpEmail] = useState("");
 	const [address, setAddress] = useState("");
 	const [phoneNo, setPhoneNo] = useState("");
 	const [cmpType, setCmpType] = useState("");
 
-
+	useEffect(() => {
+		if (cmpStatus.addCompany == "succeeded") {
+			toast.success("Company Added");
+			dispatch(clearError());
+			navigate("/companies");
+		}
+	}, [cmpStatus.addCompany]);
 
 	const handleAddTextField = (e) => {
 		e.preventDefault();
@@ -47,7 +60,6 @@ const AddCompany = () => {
 		setReqRoles(updatedreqRoles);
 	};
 
-
 	function fileHandle(event) {
 		const image = event.target.files[0];
 
@@ -62,12 +74,21 @@ const AddCompany = () => {
 		}
 	}
 
-
 	const handleCreateCompany = (e) => {
 		e.preventDefault();
 		console.log("ppp");
 		console.log(cmpName, cmpEmail, address, phoneNo, cmpType, file, reqRoles);
-        dispatch(addCompany({cmpName, cmpEmail, address, phoneNo, cmpType, file, reqRoles}))
+		dispatch(
+			addCompany({
+				cmpName,
+				cmpEmail,
+				address,
+				phoneNo,
+				cmpType,
+				file,
+				reqRoles,
+			})
+		);
 	};
 
 	return (
@@ -231,6 +252,7 @@ const AddCompany = () => {
 										type='text'
 										value={textField.jobRole}
 										name='jobRole'
+										required
 										onChange={(e) => handleChange(textField.id, e)}
 										placeholder='Enter job role'
 										className='h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none mb-2 w-[70%]'
@@ -259,15 +281,23 @@ const AddCompany = () => {
 					</div>
 				</div>
 
-				<div className='flex my-3 mb-7  items-center justify-end container w-[610px]'>
-					<button
-						type='submit'
-						className='flex flex-row items-center justify-center bg-gradient-to-tl from-indigo-600 hover:bg-indigo-700 to-fuchsia-600 hover:to-fuchsia-700 py-2 px-4 rounded-md text-white gap-2 font-medium transition-all'
-					>
-						{" "}
-						Add Comapny <FiArrowRight />
-					</button>
-				</div>
+				{cmpStatus.addCompany == "loading" ? (
+					<div className='flex my-3 mb-7  items-center justify-end container w-[610px]'>
+						<button className='flex flex-row items-center justify-center bg-gradient-to-tl from-indigo-600 hover:bg-indigo-700 to-fuchsia-600 hover:to-fuchsia-700 py-2 px-4 rounded-md text-white gap-2 font-medium transition-all'>
+							Creating... <FiArrowRight />
+						</button>
+					</div>
+				) : (
+					<div className='flex my-3 mb-7  items-center justify-end container w-[610px]'>
+						<button
+							type='submit'
+							className='flex flex-row items-center justify-center bg-gradient-to-tl from-indigo-600 hover:bg-indigo-700 to-fuchsia-600 hover:to-fuchsia-700 py-2 px-4 rounded-md text-white gap-2 font-medium transition-all'
+						>
+							{" "}
+							Add Comapny <FiArrowRight />
+						</button>
+					</div>
+				)}
 			</form>
 		</section>
 	);
