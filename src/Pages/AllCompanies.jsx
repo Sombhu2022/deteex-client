@@ -9,15 +9,24 @@ import { MdDelete, MdEdit } from "react-icons/md";
 import Searchbar from "../Components/Searchbar";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCompany, selectCompany } from "../redux/slices/companySlice";
+import {
+	clearError,
+	deleteCompany,
+	getAllCompany,
+	selectCompany,
+} from "../redux/slices/companySlice";
+import { toast } from "react-toastify";
 
 const AllCompanies = () => {
 	const dispatch = useDispatch();
-	const { allCompany } = useSelector(selectCompany);
+	const { allCompany, cmpStatus } = useSelector(selectCompany);
 	useEffect(() => {
 		dispatch(getAllCompany());
-	}, [dispatch]);
-	console.log(allCompany);
+		if (cmpStatus.deleteCompany == 'succeeded') {
+			toast.success("Company deleted")
+			dispatch(clearError())
+		}
+	}, [dispatch, cmpStatus.deleteCompany]);
 	return (
 		<section id='companies'>
 			<header className='w-full flex items-center justify-between sticky top-0 left-0 bg-purple-50 h-14 z-50'>
@@ -86,7 +95,7 @@ const AllCompanies = () => {
 										90 <FaExternalLinkAlt />
 									</p>
 									<div className='flex gap-3 items-center'>
-										<Link>
+										<Link onClick={() => dispatch(deleteCompany(cmp._id))}>
 											<MdDelete className='size-5 transition-all text-red-500 hover:text-red-600' />
 										</Link>
 										<Link>
