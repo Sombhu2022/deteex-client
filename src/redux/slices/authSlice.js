@@ -5,6 +5,7 @@ import api from '../../utils/axiosInterceptor.js'
 const initialState = {
     token: localStorage.getItem('token') || null,
     user: {},
+    allUsers:[],
     isAuthenticated: false,
     status: 'idle',
     error: null,
@@ -72,6 +73,7 @@ const userSlice = createSlice({
 
                     state.status = 'succeeded';
                     state.user = action.payload.user;
+                    state.allUsers = action.payload.allUsers;
                     state.isAuthenticated = true;
                 }
                 else {

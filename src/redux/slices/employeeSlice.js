@@ -13,6 +13,22 @@ const initialState = {
 };
 
 
+export const getAllEmp = createAsyncThunk('employee/getAllEmp', async () => {
+
+    const response = await api.get(`${base_url}/api/employee/all`,
+        {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            withCredentials: true,
+        });
+    console.log("all emp", response);
+
+    return response.data;
+});
+
+
+
 // add company
 export const addEmployee = createAsyncThunk('employee/addEmployee', async ({
     empName,
@@ -84,6 +100,22 @@ const employeeSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+            //  get alll emp
+            .addCase(getAllEmp.pending, (state) => {
+                state.status = 'loading';
+                state.error = null;
+
+            })
+            .addCase(getAllEmp.fulfilled, (state, action) => {
+                state.status = "succeeded";
+
+                state.allEmp = action.payload.allEmployee;
+
+            })
+            .addCase(getAllEmp.rejected, (state, action) => {
+
+                state.status = "failed";
+            })
             //  add company
             .addCase(addEmployee.pending, (state) => {
                 state.status = 'loading';
