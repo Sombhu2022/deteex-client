@@ -8,10 +8,15 @@
     font-family: "Inter", sans-serif;
 }
 
-/*  background color bg-purple-50
-    white bg-white
-    highlighted pink bg-purple-200
+/* ::-webkit-scrollbar {
+    width: 8px;
+} */
 
-
-*/
-/* what the fuck */
+/* ::-webkit-scrollbar-track {
+    background-color: rgb(238, 221, 255);
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #a21caf;
+    border-radius: 20px;
+} */
