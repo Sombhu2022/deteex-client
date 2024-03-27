@@ -22,9 +22,9 @@ const AllCompanies = () => {
 	const { allCompany, cmpStatus } = useSelector(selectCompany);
 	useEffect(() => {
 		dispatch(getAllCompany());
-		if (cmpStatus.deleteCompany == 'succeeded') {
-			toast.success("Company deleted")
-			dispatch(clearError())
+		if (cmpStatus.deleteCompany == "succeeded") {
+			toast.success("Company deleted");
+			dispatch(clearError());
 		}
 	}, [dispatch, cmpStatus.deleteCompany]);
 	return (
@@ -92,7 +92,8 @@ const AllCompanies = () => {
 									<p className='flex items-center'>{cmp.address}</p>
 									<p className='flex items-center'>{cmp.cmpType}</p>
 									<p className='flex items-center gap-2'>
-										90 <FaExternalLinkAlt />
+										{cmp.employees.length}
+										<FaExternalLinkAlt />
 									</p>
 									<div className='flex gap-3 items-center'>
 										<Link onClick={() => dispatch(deleteCompany(cmp._id))}>
