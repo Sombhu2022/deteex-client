@@ -105,6 +105,9 @@ function AllWorkers() {
                                 key={index}
                                 className="p-4 grid grid-cols-[1.5fr,repeat(4,1fr),0.5fr] items-center odd:bg-purple-200 rounded-md"
                             >
+                               <div className="flex gap-1">
+                                   <input type="checkbox" name="" id="" className="mr-2 bg-purple-700 text-white" /> 
+
                                 <Link
                                     className="flex justify-center items-center w-[300px] "
                                     to="/workers/0"
@@ -125,6 +128,7 @@ function AllWorkers() {
                                         </p>
                                     </div>
                                 </Link>
+                               </div>
                                 <p className="flex items-center">{ele.phone}</p>
                                 <p className="flex items-center">
                                     {ele.location}
