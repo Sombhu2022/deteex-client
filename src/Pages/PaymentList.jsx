@@ -28,15 +28,19 @@ const PaymentList = () => {
                         <button
                             className={
                                 activeBtn === "worker"
-                                    ? "bg-fuchsia-500"
-                                    : "bg-fuchsia-100"
+                                    ? "bg-fuchsia-800 px-3 py-1 rounded-md text-white"
+                                    : "bg-fuchsia-100 px-3 py-1 rounded-md"
                             }
                             onClick={() => setActiveBtn("worker")}
                         >
                             Pay Worker
                         </button>
                         <button
-                            className="bg-fuchsia-500 px-3 py-1 rounded-2xl"
+                            className={
+                                activeBtn === "teamMembers"
+                                    ? "bg-fuchsia-800 px-3 py-1 rounded-md text-white"
+                                    : "bg-fuchsia-100 px-3 py-1 rounded-md"
+                            }
                             onClick={() => setActiveBtn("teamMembers")}
                         >
                             Pay Team Member
@@ -48,16 +52,21 @@ const PaymentList = () => {
             <div className=" mt-3">
                 <div className="p-4 px-8 grid grid-cols-[1.5fr,repeat(4,1fr),0.5fr] border bg-purple-200 rounded-md">
                     <p className="flex gap-1 items-center text-purple-800 text-lg font-medium">
+                        <input
+                            type="checkbox"
+                            name="all"
+                            className="h-4 w-4 mr-3 checked:bg-purple-500"
+                        />
                         <FaUser />
                         Name
                     </p>
                     <p className="flex gap-1 items-center text-purple-800 text-lg font-medium">
                         <BiSolidPhone />
-                        Phone
+                        Payble Amount
                     </p>
                     <p className="flex gap-1 items-center text-purple-800 text-lg font-medium">
                         <FaLocationDot />
-                        Location
+                        Pay Amount
                     </p>
                     <p className="flex gap-1 items-center text-purple-800 text-lg font-medium">
                         <IoBagSharp />
@@ -65,13 +74,78 @@ const PaymentList = () => {
                     </p>
                     <p className="flex gap-1 items-center text-purple-800 text-lg font-medium">
                         <IoCheckbox />
-                        Status
+                        Days of Works
                     </p>
                     <p className="flex gap-1 items-center text-purple-800 text-lg font-medium">
                         Options
                     </p>
                 </div>
-                {data.map((ele, index) => {
+
+                <div className="p-4 grid grid-cols-[1.5fr,repeat(4,1fr),0.5fr] items-center odd:bg-purple-200 rounded-md">
+                    <div className="flex justify-center items-center w-[300px] ">
+                        <input
+                            type="checkbox"
+                            name="all"
+                            className="h-4 w-4 mr-3 bg-purple-600"
+                        />
+                        <Link className="size-10 w-[48px]" to="/workers/0">
+                            <img
+                                className="h-full aspect-square rounded-full w-auto object-contain"
+                                src={dp}
+                                alt=""
+                            />
+                        </Link>
+                        <div className="w-[230px] pr-5 text-left">
+                            <p className="truncate capitalize">Name</p>
+                            <p className=" truncate text-slate-400 font-light">
+                                emailAddress.mailid.com
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            value="₹ 12556"
+                            disabled="true"
+                            className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none w-[90%]"
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="number"
+                            value=""
+                            placeholder="₹12,222"
+                            className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none w-[90%]"
+                        />
+                    </div>
+
+                    <div className="flex items-center  gap-1 capitalize">
+                        <img
+                            className="h-full aspect-square rounded-full object-contain size-10 w-[13%] "
+                            src={dp}
+                            alt=""
+                        />
+                        Company
+                    </div>
+                    <div>
+                        <input
+                            type="number"
+                            value=""
+                            placeholder="Total worked days"
+                            className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none w-[70%]"
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="number"
+                            value=""
+                            placeholder="Total worked days"
+                            className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none w-[70%]"
+                        />
+                    </div>
+                </div>
+
+                {/* {data.map((ele, index) => {
                     return (
                         <div
                             key={index}
@@ -81,14 +155,19 @@ const PaymentList = () => {
                                 className="flex justify-center items-center w-[300px] "
                                 to="/workers/0"
                             >
-                                <div className="size-10 w-[15%]">
+                                <input
+                                    type="checkbox"
+                                    name="all"
+                                    className="h-4 w-4 mr-3 bg-purple-600"
+                                />
+                                <div className="size-10 w-48">
                                     <img
                                         className="h-full aspect-square rounded-full w-auto object-contain"
                                         src={dp}
                                         alt=""
                                     />
                                 </div>
-                                <div className="w-[85%] pr-5">
+                                <div className="w-[230px] pr-5">
                                     <p className="truncate capitalize">
                                         {ele.name}
                                     </p>
@@ -131,7 +210,7 @@ const PaymentList = () => {
                             </div>
                         </div>
                     );
-                })}
+                })} */}
             </div>
         </section>
     );
