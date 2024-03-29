@@ -113,7 +113,7 @@ const PaymentList = () => {
                     <div>
                         <input
                             type="number"
-                            value=""
+                            
                             placeholder="₹12,222"
                             className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none w-[90%]"
                         />
@@ -130,7 +130,7 @@ const PaymentList = () => {
                     <div>
                         <input
                             type="number"
-                            value=""
+                            
                             placeholder="Total worked days"
                             className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none w-[70%]"
                         />
@@ -138,7 +138,7 @@ const PaymentList = () => {
                     <div>
                         <input
                             type="number"
-                            value=""
+                            
                             placeholder="Total worked days"
                             className="h-9 rounded-md border-purple-300 border px-2 outline-none focus:outline-none w-[70%]"
                         />
