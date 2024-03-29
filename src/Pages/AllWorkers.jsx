@@ -21,9 +21,25 @@ import { BiSolidPhone } from "react-icons/bi";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoBagSharp } from "react-icons/io5";
 import { IoCheckbox } from "react-icons/io5";
+import { useSelector } from "react-redux";
+import { selectEmployee } from "../redux/slices/employeeSlice.js";
 
 function AllWorkers() {
     const [heading, setHeading] = useState("All Workers");
+
+
+    const {allEmp} = useSelector(selectEmployee)
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div className={"h-full w-full"}>
             <div className="flex justify-between items-center mb-5 h-14 sticky top-0 left-0 bg-purple-50 z-50">
@@ -99,7 +115,7 @@ function AllWorkers() {
                             Options
                         </p>
                     </div>
-                    {data.map((ele, index) => {
+                    {allEmp.map((emp, index) => {
                         return (
                             <div
                                 key={index}
@@ -110,50 +126,53 @@ function AllWorkers() {
 
                                 <Link
                                     className="flex justify-center items-center w-[300px] "
-                                    to="/workers/0"
+                                    
+                                    to={`/workers/${emp._id}`}
                                 >
                                     <div className="size-10 w-[15%]">
                                         <img
                                             className="h-full aspect-square rounded-full w-auto object-contain"
-                                            src={dp}
-                                            alt=""
+                                            src={emp.avatar.url}
+                                            alt={emp.empName}
                                         />
                                     </div>
                                     <div className="w-[85%] pr-5">
                                         <p className="truncate capitalize">
-                                            {ele.name}
+                                            {emp.empName}
                                         </p>
                                         <p className=" truncate text-slate-400 font-light">
-                                            {ele.email}
+                                            {emp.email}
                                         </p>
                                     </div>
                                 </Link>
-                               </div>
-                                <p className="flex items-center">{ele.phone}</p>
+                                <p className="flex items-center">{emp.phoneNo}</p>
                                 <p className="flex items-center">
-                                    {ele.location}
+                                    {emp.location}
                                 </p>
+
+                                {/* company logo */}
+                                {/* need to discuss */}
                                 <p className="flex items-center  gap-1 capitalize">
                                     <img
                                         className="h-full aspect-square rounded-full object-contain size-10 w-[13%] "
-                                        src={dp}
+                                        src={emp.avatar.url}
                                         alt=""
                                     />
 
-                                    {ele.company}
+                                    company
                                 </p>
                                 <p
                                     className={`flex justify-center gap-1 px-2 w-fit h-9 items-center rounded-md ${
-                                        ele.status === "Active"
+                                        emp.statusOfWorker == "active"
                                             ? "text-green-600 bg-green-200/[0.5] border border-green-600/[0.4]"
-                                            : ele.status === "Inactive"
+                                            :  emp.statusOfWorker  == "inactive"
                                             ? "text-red-600 bg-red-200/[0.5]  border border-red-600/[0.4]"
-                                            : ele.status === "Reserved"
+                                            :  emp.statusOfWorker  == "reserved"
                                             ? "text-yellow-600 bg-amber-100/[0.5] border border-yellow-600/[0.4]"
                                             : ""
                                     }`}
                                 >
-                                    &#9679; {ele.status}
+                                    &#9679; {emp.statusOfWorker}
                                 </p>
                                 <div className="flex gap-3 items-center">
                                     <Link>
@@ -171,8 +190,7 @@ function AllWorkers() {
 
             <div className="flex justify-between items-center my-6 pb-8">
                 <p>
-                    {" "}
-                    <b>1-10</b> of 220
+                Total : {allEmp?.length}
                 </p>
 
                 {/* buttons */}
