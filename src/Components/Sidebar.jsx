@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link, useLocation } from "react-router-dom";
 
@@ -14,6 +14,7 @@ import logo from "../assets/logo.png";
 import profilePic from "../assets/default_Profile_Pic.png";
 import { logoutUser, selectUser } from "../redux/slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { HiCurrencyRupee } from "react-icons/hi";
 
 const Sidebar = () => {
     const location = useLocation().pathname;
@@ -25,6 +26,10 @@ const Sidebar = () => {
     const handleLogout = () => {
         dispatch(logoutUser());
     };
+
+    useEffect(() => {
+        setActiveLocation(location);
+    }, [location]);
 
     return (
         <div className="w-[14rem] bg-white h-screen px-7 py-2 border border-purple-100 shadow-md flex flex-col justify-between items-center">
@@ -55,7 +60,6 @@ const Sidebar = () => {
                                     : "text-slate-400 font-normal  w-full px-4 py-3 rounded-full hover:bg-[rgb(252,248,255)] transition-all"
                             }
                             to="/"
-                            onClick={() => setActiveLocation("/")}
                         >
                             <li className="flex gap-2 items-center">
                                 <RiHomeFill /> Dashboard
@@ -68,7 +72,6 @@ const Sidebar = () => {
                                     : "text-slate-400 font-normal w-full px-4 py-3 rounded-full hover:bg-[rgb(252,248,255)] transition-all"
                             }
                             to="/add-workers"
-                            onClick={() => setActiveLocation("/add-workers")}
                         >
                             <li className="flex gap-2 items-center">
                                 <RiUserAddFill /> Add workers
@@ -81,7 +84,6 @@ const Sidebar = () => {
                                     : "text-slate-400 font-normal w-full px-4 py-3 rounded-full hover:bg-[rgb(252,248,255)] transition-all"
                             }
                             to="/workers"
-                            onClick={() => setActiveLocation("/workers")}
                         >
                             <li className="flex gap-2 items-center">
                                 <FaCircleUser /> Workers
@@ -94,7 +96,6 @@ const Sidebar = () => {
                                     : "text-slate-400 font-normal w-full px-4 py-3 rounded-full hover:bg-[rgb(252,248,255)] transition-all"
                             }
                             to="/add-company"
-                            onClick={() => setActiveLocation("/add-company")}
                         >
                             <li className="flex gap-2 items-center">
                                 <FaBuildingCircleCheck /> Add Company
@@ -107,7 +108,6 @@ const Sidebar = () => {
                                     : "text-slate-400 font-normal w-full px-4 py-3 rounded-full hover:bg-[rgb(252,248,255)] transition-all"
                             }
                             to="/companies"
-                            onClick={() => setActiveLocation("/companies")}
                         >
                             <li className="flex gap-2 items-center">
                                 <FaBuilding /> Companies
@@ -120,7 +120,6 @@ const Sidebar = () => {
                                     : "text-slate-400 font-normal w-full px-4 py-3 rounded-full hover:bg-[rgb(252,248,255)] transition-all"
                             }
                             to="/mail-lists"
-                            onClick={() => setActiveLocation("/mail-lists")}
                         >
                             <li className="flex gap-2 items-center">
                                 <RiMailSendFill /> Mails
@@ -133,10 +132,9 @@ const Sidebar = () => {
                                     : "text-slate-400 font-normal w-full px-4 py-3 rounded-full hover:bg-[rgb(252,248,255)] transition-all"
                             }
                             to="/payment-list"
-                            onClick={() => setActiveLocation("/payment-list")}
                         >
                             <li className="flex gap-2 items-center">
-                                <RiMailSendFill /> Payments
+                                <HiCurrencyRupee /> Payments
                             </li>
                         </Link>
                     </ul>
